@@ -6,10 +6,12 @@ import globfile
 
 class Handler(server.BaseHTTPRequestHandler):
     def do_GET(self):
-        if self.path in globfile.requests_GET:
+        path = self.path.split("?")[0]
+
+        if path in globfile.requests_GET:
             request = HTTP_util.Request(self)
             response = HTTP_util.Response(self)
-            globfile.requests_GET[self.path](request, response)
+            globfile.requests_GET[path](request, response)
 
             self.send_response(response.status_code)
             for h in response.headers:
