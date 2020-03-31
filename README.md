@@ -24,7 +24,7 @@ After you get the basic idea, you can inspect my code to learn about it in pract
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License.
 
 ## Acknowledgments
 

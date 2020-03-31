@@ -1,5 +1,12 @@
 import HTTP_util
 
+"""
+This module contains all bindings to specific paths.
+You can specify multiple modules of this sort in order to better modularize your project.
+
+All such module names should be given as arguments on server startup. 
+"""
+
 
 @HTTP_util.GET("/")
 def index(req: HTTP_util.Request, resp: HTTP_util.Response):
