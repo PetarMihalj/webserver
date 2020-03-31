@@ -7,7 +7,6 @@ import globfile
 class Handler(server.BaseHTTPRequestHandler):
     def do_GET(self):
         path = self.path.split("?")[0]
-
         if path in globfile.requests_GET:
             request = HTTP_util.Request(self)
             response = HTTP_util.Response(self)
@@ -19,7 +18,7 @@ class Handler(server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(response.message)
         else:
-            self.send_error(404, "Nema mace tu")
+            self.send_error(404, "No cats here")
 
 
 if __name__ == "__main__":

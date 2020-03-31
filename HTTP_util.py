@@ -13,9 +13,15 @@ def GET(path):
 class Request:
     def __init__(self, req: http.server.BaseHTTPRequestHandler):
         self.client_address = req.client_address
-        self.path = req.path
         self.request_line = req.requestline
         self.headers = req.headers
+        self.query_dict = dict()
+        spl = req.path.split("?")
+        if len(spl) > 1:
+            query = spl[1]
+            for keyval in query.split("&"):
+                key, val = keyval.split("=")
+                self.query_dict[key] = val
 
 
 class Response:
